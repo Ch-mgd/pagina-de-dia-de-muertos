@@ -1,0 +1,648 @@
+
+/* ==========================================
+   FRIDA - UNA HUELLA QUE NUNCA SE BORRA
+   OFRENDA DIGITAL | DÍA DE MUERTOS 2026
+========================================== */
+
+/* COLORES GENERALES */
+
+:root {
+    --negro: #050505;
+    --dorado: #e9a64e;
+    --naranja: #ef8b17;
+    --crema: #f6e6ce;
+}
+
+/* REINICIO GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--negro);
+    color: var(--crema);
+
+    font-family: 'Cormorant Garamond', Georgia, serif;
+
+    overflow-x: hidden;
+
+    position: relative;
+    isolation: isolate;
+}
+
+/* ==========================================
+   IMAGEN REAL DEL MARCO DE CEMPASÚCHIL
+========================================== */
+
+.fondo-marco {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: fill;
+
+    z-index: 0;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ==========================================
+   MENÚ LATERAL
+========================================== */
+
+.menu {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.90);
+
+    border-right: 1px solid #8a5a29;
+
+    padding: 35px 22px;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 35px;
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 26px;
+}
+
+nav a {
+    color: var(--crema);
+    text-decoration: none;
+
+    font-size: 19px;
+
+    border-left: 2px solid var(--dorado);
+
+    padding-left: 14px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--dorado);
+    padding-left: 23px;
+}
+
+/* ENLACE SELECCIONADO */
+
+nav a.activo {
+    color: var(--dorado);
+
+    border-left: 3px solid #ffa52c;
+
+    text-shadow: 0 0 10px #e9a64e55;
+}
+
+.menu-footer {
+    margin-top: auto;
+
+    text-align: center;
+
+    color: var(--dorado);
+    font-size: 17px;
+}
+
+/* ==========================================
+   CONTENIDO PRINCIPAL
+========================================== */
+
+main {
+    position: relative;
+
+    margin-left: 250px;
+
+    z-index: 2;
+}
+
+/* ==========================================
+   PORTADA DE FRIDA
+========================================== */
+
+.portada {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 65px 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: transparent;
+}
+
+.subtitulo {
+    letter-spacing: 7px;
+    font-size: 16px;
+}
+
+.separador {
+    color: var(--dorado);
+
+    font-size: 30px;
+
+    margin: 12px;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(85px, 12vw, 145px);
+
+    font-weight: normal;
+
+    color: var(--dorado);
+
+    line-height: 1.2;
+}
+
+.portada h2 {
+    font-size: 17px;
+
+    letter-spacing: 4px;
+
+    font-weight: normal;
+
+    margin-bottom: 30px;
+}
+
+/* IMAGEN DE FRIDA */
+
+.imagen-frida {
+    display: block;
+
+    width: min(390px, 85%);
+
+    max-height: 420px;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 25px #a75c2044);
+
+    animation: aparecer 1.8s ease;
+}
+
+.huella {
+    color: var(--dorado);
+
+    font-size: 35px;
+
+    margin: 20px;
+}
+
+.frase {
+    font-size: 26px;
+
+    font-style: italic;
+
+    line-height: 1.5;
+
+    max-width: 650px;
+}
+
+/* BOTÓN DE PORTADA */
+
+.boton {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 12px 30px;
+
+    border: 1px solid var(--dorado);
+
+    color: var(--dorado);
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background: var(--dorado);
+    color: var(--negro);
+}
+
+/* ==========================================
+   SECCIONES INFORMATIVAS
+========================================== */
+
+.contenido {
+    position: relative;
+
+    min-height: 85vh;
+
+    padding: 100px 10%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: transparent;
+
+    border-top: 1px solid #302015;
+}
+
+.contenido h2 {
+    font-size: clamp(35px, 5vw, 55px);
+
+    color: var(--dorado);
+
+    margin-bottom: 15px;
+}
+
+.linea {
+    width: 110px;
+    height: 2px;
+
+    background: var(--dorado);
+
+    margin-bottom: 35px;
+}
+
+.contenido p {
+    font-size: 24px;
+
+    max-width: 650px;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    position: relative;
+
+    text-align: center;
+
+    padding: 35px;
+
+    color: var(--dorado);
+
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   LLUVIA DE CEMPASÚCHIL
+========================================== */
+
+#petalos {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+.petalo {
+    position: absolute;
+
+    top: -40px;
+
+    width: 13px;
+    height: 20px;
+
+    background: var(--naranja);
+
+    border-radius: 80% 10% 80% 20%;
+
+    opacity: 0.85;
+
+    box-shadow: 0 0 8px #d97820;
+
+    animation: caer linear forwards;
+}
+
+/* ANIMACIÓN DE CAÍDA */
+
+@keyframes caer {
+
+    0% {
+        transform:
+            translate3d(0, -30px, 0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    90% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform:
+            translate3d(100px, 110vh, 0)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+/* ==========================================
+   ANIMACIÓN DE ENTRADA DE FRIDA
+========================================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   ADAPTACIÓN PARA TABLETS Y CELULARES
+========================================== */
+
+@media screen and (max-width: 768px) {
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* MARCO FLORAL */
+
+    .fondo-marco {
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* MENÚ SUPERIOR */
+
+    .menu {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+
+        padding: 15px 10px;
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--dorado);
+
+        background: rgba(0, 0, 0, 0.92);
+    }
+
+    .logo {
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+
+    nav {
+        display: flex;
+
+        flex-direction: row;
+
+        gap: 12px;
+
+        overflow-x: auto;
+
+        padding: 10px 5px 15px;
+
+        scrollbar-width: thin;
+
+        scrollbar-color: var(--dorado) var(--negro);
+    }
+
+    nav a {
+        flex-shrink: 0;
+
+        font-size: 15px;
+
+        white-space: nowrap;
+
+        padding: 8px 12px;
+
+        border: 1px solid var(--dorado);
+
+        border-radius: 20px;
+    }
+
+    nav a:hover,
+    nav a.activo {
+        padding: 8px 12px;
+
+        background: var(--dorado);
+
+        color: var(--negro);
+    }
+
+    .menu-footer {
+        display: none;
+    }
+
+    /* CONTENIDO */
+
+    main {
+        margin-left: 0;
+
+        width: 100%;
+    }
+
+    /* PORTADA */
+
+    .portada {
+        min-height: 90vh;
+        min-height: 90svh;
+
+        padding: 40px 30px;
+    }
+
+    .subtitulo {
+        font-size: 12px;
+
+        letter-spacing: 4px;
+    }
+
+    h1 {
+        font-size: clamp(75px, 20vw, 110px);
+    }
+
+    .portada h2 {
+        font-size: 12px;
+
+        letter-spacing: 2px;
+
+        line-height: 1.8;
+
+        max-width: 300px;
+    }
+
+    /* IMAGEN DE FRIDA */
+
+    .imagen-frida {
+        width: 85%;
+
+        max-width: 320px;
+
+        max-height: 340px;
+
+        object-fit: contain;
+
+        margin: 10px auto;
+    }
+
+    .huella {
+        font-size: 28px;
+
+        margin: 15px;
+    }
+
+    .frase {
+        font-size: 21px;
+
+        line-height: 1.5;
+
+        padding: 0 10px;
+    }
+
+    .boton {
+        margin-top: 25px;
+
+        font-size: 17px;
+
+        padding: 12px 22px;
+    }
+
+    /* SECCIONES */
+
+    .contenido {
+        min-height: 75vh;
+
+        padding: 65px 30px;
+    }
+
+    .contenido h2 {
+        font-size: 36px;
+
+        line-height: 1.2;
+    }
+
+    .contenido p {
+        font-size: 20px;
+
+        line-height: 1.6;
+    }
+
+    footer {
+        padding: 25px 15px;
+
+        font-size: 15px;
+    }
+
+    /* PÉTALOS */
+
+    .petalo {
+        max-width: 12px;
+        max-height: 18px;
+    }
+}
+
+/* ==========================================
+   TELÉFONOS PEQUEÑOS
+========================================== */
+
+@media screen and (max-width: 380px) {
+
+    h1 {
+        font-size: 75px;
+    }
+
+    .portada {
+        padding: 35px 25px;
+    }
+
+    .imagen-frida {
+        max-width: 250px;
+    }
+
+    .frase {
+        font-size: 18px;
+    }
+
+    .contenido h2 {
+        font-size: 30px;
+    }
+
+    .contenido p {
+        font-size: 18px;
+    }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .petalo,
+    .imagen-frida {
+        animation: none;
+    }
+}
