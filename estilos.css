@@ -600,6 +600,125 @@ footer {
     }
 }
 
+/* =====================================
+   CORRECCIÓN DEFINITIVA: MENÚ MÓVIL
+===================================== */
+
+/* Computadora: ocultar hamburguesa */
+#btnMenu {
+    display: none;
+}
+
+/* Celular */
+@media screen and (max-width: 768px) {
+
+    #btnMenu {
+        display: flex !important;
+
+        position: fixed;
+        top: 15px;
+        left: 15px;
+
+        width: 50px;
+        height: 50px;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+
+        background: #080808;
+        border: 2px solid #e9a64e;
+        border-radius: 8px;
+
+        cursor: pointer;
+        z-index: 99999;
+    }
+
+    #btnMenu span {
+        display: block;
+        width: 26px;
+        height: 3px;
+        background: #e9a64e;
+        border-radius: 3px;
+    }
+
+    /* Ocultar menú lateral inicialmente */
+    #menuPrincipal {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        width: min(300px, 85vw);
+        height: 100vh;
+        height: 100dvh;
+
+        padding: 85px 25px 25px;
+
+        background: #080808;
+
+        transform: translateX(-105%);
+        visibility: hidden;
+
+        transition: transform 0.3s ease;
+        z-index: 99997;
+    }
+
+    /* Mostrar cuando JavaScript agregue la clase */
+    #menuPrincipal.mostrar {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    #menuPrincipal nav {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        overflow: visible;
+    }
+
+    #menuPrincipal nav a {
+        display: block;
+        flex-shrink: 0;
+        white-space: normal;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    #overlayMenu {
+        display: block;
+        position: fixed;
+        inset: 0;
+
+        background: rgba(0, 0, 0, 0.65);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        z-index: 99996;
+    }
+
+    #overlayMenu.visible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .portada {
+        padding-top: 85px;
+    }
+}
+
 /* ==========================================
    TELÉFONOS PEQUEÑOS
 ========================================== */

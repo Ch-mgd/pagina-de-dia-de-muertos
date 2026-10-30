@@ -5,11 +5,12 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <!-- Adaptación para celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Frida | Una huella eterna</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="estilos.css">
 
     <!-- Tipografías -->
@@ -17,13 +18,11 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&display=swap"
         rel="stylesheet"
     >
-    //soporte para telefono
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-<!-- IMAGEN REAL DEL MARCO DE CEMPASÚCHIL -->
+    <!-- IMAGEN DEL MARCO DE CEMPASÚCHIL -->
     <img
         src="marco.png"
         class="fondo-marco"
@@ -31,16 +30,38 @@
         aria-hidden="true"
     >
 
-
-</div>
-
     <!-- LLUVIA DE CEMPASÚCHIL -->
     <div id="petalos" aria-hidden="true"></div>
 
-    <!-- MENÚ LATERAL -->
-    <aside class="menu">
+
+    <!-- =====================================
+         BOTÓN HAMBURGUESA PARA MÓVIL
+    ====================================== -->
+
+    <button
+        id="btnMenu"
+        class="hamburguesa"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="menuPrincipal"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- FONDO OSCURO DEL MENÚ MÓVIL -->
+    <div id="overlayMenu" class="overlay-menu"></div>
 
 
+    <!-- =====================================
+         MENÚ PRINCIPAL
+    ====================================== -->
+
+    <aside class="menu" id="menuPrincipal">
+
+        <div class="logo">🐾</div>
 
         <nav>
             <a href="#inicio">Inicio</a>
@@ -72,7 +93,11 @@
 
     </aside>
 
-    <!-- CONTENIDO PRINCIPAL -->
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ====================================== -->
+
     <main>
 
         <!-- PORTADA -->
@@ -103,18 +128,23 @@
                 se quedan para siempre en el corazón.
             </p>
 
-           <a href="https://www.youtube.com/watch?v=G4tFGdE4gFA"
-   class="boton"
-   target="_blank"
-   rel="noopener noreferrer">
-
-    Descubre su historia
-
-</a>
+            <!-- ENLACE A YOUTUBE -->
+            <a
+                href="https://www.youtube.com/watch?v=G4tFGdE4gFA"
+                class="boton"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Descubre su historia
+            </a>
 
         </section>
 
-        <!-- SECCIÓN 1 -->
+
+        <!-- =====================================
+             SECCIÓN 1: BIOGRAFÍA
+        ====================================== -->
+
         <section id="biografia" class="contenido">
 
             <h2>Biografía de Frida</h2>
@@ -122,19 +152,120 @@
             <div class="linea"></div>
 
             <p>
-                Una historia de valentía, lealtad
-                y esperanza.
+                Frida fue una labrador retriever de color miel
+                de la Secretaría de Marina de México (SEMAR),
+                convertida en símbolo nacional e internacional
+                de la búsqueda y rescate tras los sismos de 2017.
+                Durante su carrera localizó a 55 personas:
+                12 con vida y 43 sin vida.
+            </p>
+
+            <h3>Origen y formación</h3>
+
+            <p>
+                Frida nació el 12 de abril de 2009 en la Unidad
+                de la Secretaría de Marina, hoy Subgrupo de Control
+                Canino del Estado Mayor General de la Armada de México.
+                Desde cachorra mostró concentración, curiosidad,
+                temperamento equilibrado y capacidad de adaptación,
+                rasgos que la hicieron apta para el trabajo
+                de búsqueda y rescate.
             </p>
 
             <p>
-                Próximamente conocerás la historia
-                de Frida, la perrita rescatista
-                que dejó una huella en México.
+                Comenzó su entrenamiento a los tres meses de edad
+                y completó en ocho meses un curso que normalmente
+                tenía una duración de un año, un desempeño considerado
+                excepcional. Su preparación la especializó en localizar
+                personas atrapadas bajo estructuras colapsadas.
+            </p>
+
+            <h3>Carrera de rescate</h3>
+
+            <p>
+                Su primera misión fue en 2010, cuando viajó a Haití
+                tras el terremoto que devastó ese país. A lo largo
+                de su servicio participó en operaciones en México,
+                Haití, Guatemala, Honduras y Ecuador.
+            </p>
+
+            <p>
+                Entre sus intervenciones más conocidas están
+                la explosión de la Torre de Pemex en Ciudad de México
+                en 2013, el terremoto de Ecuador de 2016 y los sismos
+                de septiembre de 2017 en México.
+            </p>
+
+            <p>
+                Durante las labores en Oaxaca ayudó a localizar
+                a 12 personas en Juchitán.
+            </p>
+
+            <h3>Reconocimiento mundial</h3>
+
+            <p>
+                Frida se volvió una figura emblemática durante
+                los sismos de septiembre de 2017, cuando imágenes
+                de ella trabajando con botas protectoras, goggles
+                y una máscara recorrieron el mundo.
+            </p>
+
+            <p>
+                Su imagen trascendió el ámbito operativo:
+                se convirtió en un símbolo de solidaridad,
+                trabajo en equipo y de la capacidad de los
+                equipos caninos de rescate ante los desastres.
+            </p>
+
+            <h3>Retiro y fallecimiento</h3>
+
+            <p>
+                El 24 de junio de 2019, Frida causó baja del servicio
+                activo de la Armada de México en una ceremonia oficial.
+                Después de su retiro permaneció bajo custodia
+                del Subgrupo de Control Canino, donde recibió
+                cuidados especiales durante su etapa geriátrica.
+            </p>
+
+            <p>
+                Frida falleció el 15 de noviembre de 2022,
+                a los 13 años, por padecimientos asociados a su edad.
+                La Secretaría de Marina informó su muerte y destacó
+                su trayectoria como una de las perras rescatistas
+                más reconocidas de México.
+            </p>
+
+            <h3>Legado</h3>
+
+            <p>
+                Frida dejó un legado doble: el humanitario,
+                por las vidas que ayudó a encontrar y las familias
+                a las que pudo dar respuestas; y el institucional,
+                al visibilizar el trabajo de los equipos caninos
+                de la SEMAR.
+            </p>
+
+            <p>
+                Su historia sigue siendo un referente en México
+                sobre la importancia de los perros de búsqueda
+                y rescate.
+            </p>
+
+            <h3>Fuentes de consulta</h3>
+
+            <p>
+                Secretaría de Gobernación de México,
+                El Financiero, CBS News, El País / Verne,
+                Gizmodo en español e Infobae.
             </p>
 
         </section>
 
-        <!-- SECCIÓN 2 -->
+
+        <!-- =====================================
+             SECCIÓN 2: DEDICATORIA
+        ====================================== -->
+
         <section id="dedicatoria" class="contenido">
 
             <h2>¿Por qué elegimos a Frida?</h2>
@@ -142,17 +273,28 @@
             <div class="linea"></div>
 
             <p>
-.
+               Elegimos a Frida para un altar de Día de Muertos porque representa algo muy bonito de nuestra cultura: la esperanza que camina entre la ruina. Ella no solo fue una perra rescatista; fue la nariz, las patas y el corazón de miles de personas que, bajo los escombros, aún esperaban una señal de vida.
+
+Porque nos enseñó a no rendirnos
+Frida se atrevió a llegar a los lugares donde el miedo era más grande: Haití tras el terremoto de 2010, la explosión de la Torre de Pemex, el sismo de Ecuador y los terremotos de 2017 en México. Con sus goggles, su arnés y sus botas, avanzaba donde los humanos apenas podían entrar, buscando con paciencia a quienes el mundo ya había dado por perdidos.
+
+En un altar, Frida nos recuerda que el Día de Muertos no es solo recordar a los humanos si no también a quienes se fueron: también es honrar a quienes, en vida, se entregaron por los demás. Ella localizó a 55 personas —12 con vida y 43 sin vida— y, aun cuando encontraba a quienes ya no podían regresar, les devolvía a sus familias la posibilidad de despedirse.
+
+Porque fue esperanza con patas
+Cuando México lloraba en septiembre de 2017, la imagen de Frida trabajando entre escombros se convirtió en un abrazo colectivo. No hablaba, no prometía milagros; solo olía, escuchaba y ladraba cuando encontraba una pista. Y ese ladrido era, para muchas familias, la diferencia entre la desesperación y una última chispa de esperanza.
+
+Por eso Frida pertenece a un altar: porque encarna el puente entre los vivos y los que ya partieron. Su trabajo consistió, en el fondo, en acompañar a las personas en el momento más frágil de su historia, ya fuera para devolverles el aliento o para llevarlas con dignidad de regreso a casa.
             </p>
 
-            <p>
-                Porque existen héroes que no necesitan
-                palabras para cambiar vidas.
-            </p>
+
 
         </section>
 
-        <!-- SECCIÓN 3 -->
+
+        <!-- =====================================
+             SECCIÓN 3: OFRENDA
+        ====================================== -->
+
         <section id="ofrenda" class="contenido">
 
             <h2>Nuestra ofrenda</h2>
@@ -160,19 +302,47 @@
             <div class="linea"></div>
 
             <p>
-                Cada elemento de nuestro altar
-                guarda un significado especial.
+                Esta ofrenda es un camino de luz, amor y regreso, inspirado en Frida: la perrita que enseñó a México que, incluso entre los escombros más dolorosos, siempre se puede buscar vida, esperanza y una despedida digna.
+
+Cempasúchil y flor de terciopelo: son el sendero de color que guía a las almas a casa, como Frida guió con su olfato y su valentía a quienes estaban perdidos.
+
+Sal: purifica el camino del espíritu, para que pueda viajar en paz, sin dolor y sin ataduras.
+
+Agua en la jarra: alivia la sed del alma tras su recorrido; es el mismo cuidado que Frida recibió y que ella ofreció, en forma de esperanza, a tantas familias.
+
+Copal e incienso: elevan oraciones y limpian el espacio para que el encuentro entre los vivos y los que ya partieron sea sereno.
+
+Veladoras: representan la luz que no se apaga; así como Frida fue luz en la oscuridad de los sismos, estas velas iluminan el regreso de los perritos queridos.
+
+Calaveritas de azúcar: nos recuerdan que la muerte puede mirarse con ternura, memoria y gratitud, no solo con tristeza.
+
+Croquetas y comida de perro: son la ofrenda más íntima: el alimento que consintió su cuerpo en vida y que ahora dice “sigues siendo bienvenido en esta casa”.
+
+Juguete de perro: guarda su alegría, sus juegos y su personalidad; es la manera de recordar su vida, no solamente su ausencia.
+
+Collares: simbolizan pertenencia y vínculo; aunque ya no estén en el cuello de un perrito, el amor que representan sigue uniendo a la familia.
+
+Semillas: hablan de continuidad y renacimiento: de la vida que sigue creciendo después de la despedida.
+
+Biblia y crucifijo: expresan fe, protección y esperanza en una vida más allá de esta.
+
+Silueta de Frida: es el corazón del altar. Representa a la perrita rescatista que localizó a 55 personas —12 con vida— y que se convirtió en símbolo nacional de esperanza, lealtad y servicio.
+
             </p>
 
             <p>
-                Aquí conocerás qué simbolizan
-                las flores, las veladoras,
-                el agua y los demás objetos.
+                La ofrenda dice, con cada elemento: “Aquí hay luz para que encuentres el camino, agua para descansar, flores para guiarte y amor para recordarte.” Pero con la silueta de Frida añade otra promesa: que los perritos no solo nos acompañaron en la vida; también se convierten en guías hacia el más allá, porque conocieron el camino del amor incondicional.
+
+Frida representa a todos los perritos que partieron: los héroes con cuatro patas, los guardianes silenciosos y los amigos que, como ella, dejaron huellas de esperanza en quienes los amaron.ssssss
             </p>
 
         </section>
 
-        <!-- SECCIÓN 4 -->
+
+        <!-- =====================================
+             SECCIÓN 4: HUELLAS ETERNAS
+        ====================================== -->
+
         <section id="mensaje" class="contenido">
 
             <h2>Huellas eternas</h2>
@@ -180,17 +350,64 @@
             <div class="linea"></div>
 
             <p>
-                Para todas aquellas mascotas
-                que ya no están físicamente,
-                pero siguen viviendo en nuestros recuerdos.
+               Hoy los recordamos a nuestros mascotas no  como ausencias, sino como guías. Porque si alguien supo acompañarnos hasta el último instante, fueron ustedes: con su mirada tranquila, su cola que nos recibía como si fuéramos el centro del mundo y su amor que nunca pidió nada a cambio.
+
+En la tradición del Día de Muertos, creemos que los que se van no desaparecen: encuentran el camino de regreso a casa guiados por la luz, el cempasúchil y el recuerdo. Y qué mejor guía que un perrito: ellos siempre supieron encontrar el camino hacia nosotros, incluso cuando estábamos perdidos, tristes o escondidos detrás de una puerta. Ahora, desde el más allá, creemos que siguen haciendo lo mismo: olfateando el camino, iluminando el sendero y esperándonos con la misma alegría de siempre.
+
+Héroes pocos reconocidos, pero héroes al fin. Los recordamos con cariño y gratitud, porque nos enseñaron que la vida es más hermosa cuando se comparte y que el amor verdadero no tiene fecha de caducidad.
+Pensamos en Frida, la labrador de la Marina que buscó vida entre escombros en México, Haití, Guatemala y Ecuador; localizó a 55 personas durante su servicio y se convirtió en símbolo de esperanza para todo un país. Frida nos enseñó que incluso en la oscuridad más profunda vale la pena seguir buscando, porque cada vida importa.
+
+Pensamos en Eco y Evil, perros pastores alemanes de la Secretaría de Marina que trabajaron en Oaxaca y en la Ciudad de México tras los sismos de 2017, ayudando a encontrar personas atrapadas bajo los escombros. Pensamos en Titán, Ecko, Eska, Eros, Acertijo y Nahual, compañeros de brigada que también pusieron su olfato, su valentía y su nobleza al servicio de México.
+
+Y pensamos en todos los perritos sin nombre que un día fueron familia: los que dormían a los pies de la cama, los que esperaban en la puerta, los que nos acompañaron en silencio cuando las palabras no alcanzaban. Ellos también son héroes, porque su mayor hazaña fue amarnos sin condiciones.
             </p>
 
             <p>
-                Porque el amor también deja huellas.
+                “Perritos queridos: ustedes fueron nuestra brújula en la vida; ahora sean nuestra luz en el camino de vuelta. No nos digan adiós, solo esperen por nosotros, como siempre lo hicieron. Aquí siguen siendo amados, aquí nunca dejaron de ser familia.”
             </p>
-            
-        <script src="java.js"></script> 
-
 
         </section>
 
+
+        <!-- =====================================
+             SECCIÓN 5: BINOMIOS CANINOS
+        ====================================== -->
+
+        <section id="binomios" class="contenido">
+
+            <h2>Binomios caninos</h2>
+
+            <div class="linea"></div>
+
+            <p>
+                A todos los binomios caninos —a los perros de búsqueda y rescate, a los guías, a los detectores, a los guardianes y a los compañeros silenciosos— gracias por enseñarnos que la lealtad no se entrena: se nace con ella y se demuestra cuando más duele.
+
+Gracias por caminar entre escombros, entre humo, entre miedo y entre lágrimas, buscando una respiración, una mano, una vida. Gracias por no rendirse cuando el mundo se detiene. Ustedes nos recuerdan que un ladrido puede ser una promesa, que una nariz puede encontrar esperanza y que cuatro patas pueden sostener el corazón de todo un país.
+            </p>
+
+            <p>
+                Pero mientras honramos a estos héroes, no podemos olvidar a los perritos que aún esperan una mano amable. El maltrato no siempre se ve en un golpe: también es el perro amarrado bajo el sol, el que no tiene agua, el abandonado, el que aprendió a temblar ante la presencia de una persona. Muchos animales rescatados cargan heridas físicas y emocionales que tardan en sanar incluso después de encontrar una familia.
+
+Hoy podemos rendir homenaje a Frida, Eco, Evil, Titán y a tantos binomios que han servido a México; pero también podemos preguntarnos: ¿cuántos Frida están siendo lastimados ahora mismo? ¿Cuántos perritos que hoy sufren podrían, mañana, encontrar a alguien atrapado, guiar a una persona con discapacidad, detectar una enfermedad o salvar una vida?
+            </p>
+
+            <p>
+               "Trátalos como quienes son: no como objetos, no como diversión, no como algo desechable. Trátalos como los ángeles de cuatro patas que son; porque el perrito que hoy rescatas puede ser el que mañana te rescate a ti.”
+            </p>
+
+        </section>
+
+
+        <!-- PIE DE PÁGINA -->
+        <footer>
+            Hecho con respeto, memoria y cariño 🐾
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT: PÉTALOS Y MENÚ HAMBURGUESA -->
+    <script src="java.js"></script>
+
+</body>
+</html>
